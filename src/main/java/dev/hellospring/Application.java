@@ -1,9 +1,10 @@
 package dev.hellospring;
 
-import jdk.nashorn.internal.runtime.OptimisticReturnFilters;
+import dev.hellospring.service.CourseService;
 
 public class Application {
     public static void main (String[] args ){
-        System.out.println("Hello spring");
+        CourseService service = new CourseService();
+        System.out.println(service.list());
     }
 }
