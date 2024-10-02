@@ -1,6 +1,7 @@
 package dev.hellospring.service;
 
 import dev.hellospring.model.Course;
+import dev.hellospring.repository.CourseRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,19 +9,16 @@ import java.util.List;
 import java.util.Optional;
 
 public class CourseService implements CrudService{
+    private CourseRepository repository;
 
-    private List<Course> courses;
 
-    public CourseService() {
-        courses = new ArrayList<>();
-        Course spring = new Course(1, "Getting started with spring", "learn how to build applications using spring", "non-existent link");
-
-        courses.add(spring);
+    public CourseService(CourseRepository repository) {
+        this.repository = repository;
     }
 
     @Override
     public List list() {
-        return courses;
+        return repository.findall();
     }
 
     @Override
