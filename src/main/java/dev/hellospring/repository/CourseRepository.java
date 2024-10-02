@@ -1,11 +1,13 @@
 package dev.hellospring.repository;
 
 import dev.hellospring.model.Course;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Repository
 public class CourseRepository implements CrudRepository<Course> {
 
     @Override

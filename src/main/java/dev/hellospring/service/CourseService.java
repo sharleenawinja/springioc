@@ -2,12 +2,14 @@ package dev.hellospring.service;
 
 import dev.hellospring.model.Course;
 import dev.hellospring.repository.CourseRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CourseService implements CrudService{
     private CourseRepository repository;
 
